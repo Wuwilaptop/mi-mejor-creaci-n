@@ -38,6 +38,8 @@ cp -r "$DOTFILES_DIR/config/waybar" ~/.config/
 # 5. Copiar imagen de fastfetch a Descargas
 mkdir -p ~/Descargas
 cp "$DOTFILES_DIR/config/fastfetch/ore.png" ~/Descargas/
+mkdir -p ~/wall
+cp "$DOTFILES_DIR/config/wall/p14.jpg" ~/wall/
 
 # 6. Dar permisos de ejecución a scripts
 chmod +x ~/.config/hypr/scripts/*.sh
