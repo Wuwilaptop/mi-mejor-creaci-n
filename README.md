@@ -5,7 +5,10 @@ Configuración personal de mi entorno Arch Linux + Hyprland. Este repo instala a
 ## 📦 Qué incluye
 
 - **Hyprland** — compositor Wayland (`hyprland.lua`)
+- **Hyprpaper** — wallpaper (`hyprpaper.conf` + imagen)
+- **Hyprlock** — pantalla de bloqueo (`hyprlock.conf`)
 - **Waybar** — barra superior (`config.jsonc`, `style.css`)
+- **Rofi** — launcher de aplicaciones
 - **Kitty** — terminal (`kitty.conf`)
 - **Fastfetch** — info del sistema con logo personalizado (`config.jsonc` + imagen)
 - **Fish** — shell (`config.fish`)
