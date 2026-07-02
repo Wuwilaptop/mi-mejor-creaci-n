@@ -34,6 +34,7 @@ cp -r "$DOTFILES_DIR/config/kitty" ~/.config/
 cp -r "$DOTFILES_DIR/config/fastfetch" ~/.config/
 cp -r "$DOTFILES_DIR/config/fish" ~/.config/
 cp -r "$DOTFILES_DIR/config/waybar" ~/.config/
+cp -r "$DOTFILES_DIR/config/rofi" ~/.config/
 
 # 5. Copiar imagen de fastfetch a Descargas
 mkdir -p ~/Descargas
