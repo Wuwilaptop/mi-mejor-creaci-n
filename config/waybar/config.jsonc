@@ -1,0 +1,92 @@
+// -*- mode: jsonc -*-
+{
+    "height": 30,
+    "spacing": 4,
+    "modules-left": [
+        "custom/menu",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "custom/wallpaper",
+        "pulseaudio",
+        "network",
+        "battery"
+    ],
+    "custom/menu": {
+        "format": "󰣇",
+        "on-click": "rofi -show drun",
+        "tooltip": false
+    },
+    "custom/wallpaper": {
+        "format": "󰸉",
+        "on-click": "kitty -e nano ~/.config/hypr/hyprpaper.conf",
+        "on-click-right": "sh -c 'killall hyprpaper && hyprpaper &'",
+        "tooltip": false
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "active-only": false,
+        "persistent-workspaces": {
+            "*": 6
+        },
+        "format": "⬤",
+        "format-active": "⬤"
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% 󰚥",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{capacity}% {timeTo}"
+    },
+    "network": {
+        "format-wifi": "󰤨  ON",
+        "format-ethernet": "󰈀  ON",
+        "format-disconnected": "󰤭  OFF",
+        "tooltip-format": "{essid} {signalStrength}%",
+        "on-click": "kitty --class floating_network -e impala"
+    },
+// ... Este es el módulo que está justo ARRIBA de pulseaudio ...
+    "custom/wallpaper": {
+        "format": "󰸉",
+        "on-click": "kitty -e nano ~/.config/hypr/hyprpaper.conf",
+        "on-click-right": "sh -c 'killall hyprpaper && hyprpaper &'",
+        "tooltip": false
+    }, 
+"pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 ░░░░░░░░░░",
+        "format-icons": {
+            // Aquí engañamos a Waybar: según el porcentaje, dibuja una barra de texto fija
+            "default": [
+                "󰕿 ░░░░░░░░░░", // 0%
+                "󰕿 █░░░░░░░░░", // ~10%
+                "󰕿 ██░░░░░░░░", // ~20%
+                "󰖀 ███░░░░░░░", // ~30%
+                "󰖀 ████░░░░░░", // ~40%
+                "󰖀 █████░░░░░", // ~50%
+                "󰖀 ██████░░░░", // ~60%
+                "󰕾 ███████░░░", // ~70%
+                "󰕾 ████████░░", // ~80%
+                "󰕾 █████████░", // ~90%
+                "󰕾 ██████████"  // 100%
+            ]
+        },
+        "scroll-step": 5,
+        "on-click": "pavucontrol",
+        "tooltip": false
+} // <--- OJO: Esta llave NO lleva coma porque es el último módulo de la lista.
+} // <--- Esta última llave cierra todo el archivo. Asegurate de que exista.
